@@ -3,7 +3,7 @@ import express from 'express'
 const app = express()
 app.set('view engine', 'ejs')
 
-app.set('views','src/web/')
+app.set('views',__dirname + '/web/')
 
 app.get('/', (req, res) => {
     res.render('homePage/index')
@@ -60,3 +60,5 @@ app.get('/src/web/output.css', (req, res) => {
 app.listen(3000, () => {
     console.log('Listening at port 3000')
 })
+
+module.exports = app;
